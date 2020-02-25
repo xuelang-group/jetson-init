@@ -1,7 +1,7 @@
 # jetson-init
 Jetson Init Scripts
 
-`version: 0.0.6`
+`version: 0.0.7`
 
 ## Usage
 
