@@ -25,6 +25,7 @@ init() {
 }
 
 {
+    info "Start Initing Jetson..."
     prepare
     init
 }
