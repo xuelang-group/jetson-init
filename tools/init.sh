@@ -20,7 +20,6 @@ prepare() {
 }
 
 init() {
-    info "Jetson Init Start!"
     curl -sfL https://suanpan-public.oss-cn-shanghai.aliyuncs.com/jetson/${VERSION}/deployments/deploy.sh | sh -
 }
 
