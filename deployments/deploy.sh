@@ -12,7 +12,7 @@ deploy_k3s() {
 }
 
 wait_for_k3s() {
-    while ! nc -z localhost 8080; do
+    while ! nc -z localhost 6443; do
         info "Waiting k3s launch on 8080..."
         sleep 1
     done
