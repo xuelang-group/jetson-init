@@ -1,5 +1,5 @@
 # jetson-init
-Jetson Init Scripts
+Jetson Init Scripts as a single k3s server
 
 `version: 0.0.9`
 
@@ -8,3 +8,8 @@ Jetson Init Scripts
 ``` bash
 curl -sfL https://suanpan-public.oss-cn-shanghai.aliyuncs.com/jetson/init.sh | sh -
 ```
+
+## develop
+1. switch branch "develop"
+2. add/edit script-wheels in deployments directory
+3. add running job in tools/init.sh (see comments )
