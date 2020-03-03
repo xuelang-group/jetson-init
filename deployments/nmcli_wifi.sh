@@ -5,4 +5,5 @@ echo setting wifi
 echo SSID=${WIFI_SSID}
 echo PASSWORD=${WIFI_PASSWD}
 # nmcli dev wifi connect "wifi名" password "密码"
+nmcli radio wifi on
 nmcli dev wifi connect ${WIFI_SSID} password ${WIFI_PASSWD}
