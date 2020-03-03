@@ -18,3 +18,5 @@ curl -sfL https://suanpan-public.oss-cn-shanghai.aliyuncs.com/jetson/init.sh | s
 
 ## run when no internet
 refer deployments/nmcli_wifi.sh or deployments/no_nmcli_wifi.sh
+
+warning: su root before connect wifi, or wifi wont up before login
