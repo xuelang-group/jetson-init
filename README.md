@@ -13,3 +13,8 @@ curl -sfL https://suanpan-public.oss-cn-shanghai.aliyuncs.com/jetson/init.sh | s
 1. switch branch "develop"
 2. add/edit script-wheels in deployments directory
 3. add running job in tools/init.sh (see comments )
+4. do your git commit and `bash tools/upgrade.sh`
+
+
+## run when no internet
+refer deployments/nmcli_wifi.sh or deployments/no_nmcli_wifi.sh
