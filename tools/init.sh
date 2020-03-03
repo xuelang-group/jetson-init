@@ -20,11 +20,19 @@ prepare() {
 }
 
 init() {
+    # add new jobs here, notice running order
+    curl -sfL https://suanpan-public.oss-cn-shanghai.aliyuncs.com/jetson/${VERSION}/deployments/clean.sh | sh -
     curl -sfL https://suanpan-public.oss-cn-shanghai.aliyuncs.com/jetson/${VERSION}/deployments/deploy.sh | sh -
 }
+
+# add more jobs like these
+# new_job() {
+#     curl -sfL https://suanpan-public.oss-cn-shanghai.aliyuncs.com/jetson/${VERSION}/deployments/xxx.sh | sh -
+# }
 
 {
     info "Start Initing Jetson..."
     prepare
     init
+#   new_job
 }
