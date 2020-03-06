@@ -7,10 +7,12 @@ info() {
 }
 
 setup_verify_version() {
-    if [ -z "${JETSON_INIT_VERSION}" ]; then
-        export JETSON_INIT_VERSION=$(curl -sfL "https://suanpan-public.oss-cn-shanghai.aliyuncs.com/jetson/version.txt")
+    if [ -n "${JETSON_INIT_VERSION}" ]; then
+        VERSION="${JETSON_INIT_VERSION}"
+    else
+        VERSION=$(curl -sfL "https://suanpan-public.oss-cn-shanghai.aliyuncs.com/jetson/version.txt")
     fi
-    info "Version: ${JETSON_INIT_VERSION}"
+    info "Version: ${VERSION}"
 }
 
 prepare() {
@@ -19,13 +21,14 @@ prepare() {
 
 init() {
     # add new jobs here, notice running order
-    curl -sfL https://suanpan-public.oss-cn-shanghai.aliyuncs.com/jetson/${JETSON_INIT_VERSION}/deployments/clean.sh | sh -
-    curl -sfL https://suanpan-public.oss-cn-shanghai.aliyuncs.com/jetson/${JETSON_INIT_VERSION}/deployments/deploy.sh | sh -
+    export JETSON_INIT_VERSION=${VERSION}
+    curl -sfL https://suanpan-public.oss-cn-shanghai.aliyuncs.com/jetson/${VERSION}/deployments/clean.sh | sh -
+    curl -sfL https://suanpan-public.oss-cn-shanghai.aliyuncs.com/jetson/${VERSION}/deployments/deploy.sh | sh -
 }
 
 # add more jobs like these
 # new_job() {
-#     curl -sfL https://suanpan-public.oss-cn-shanghai.aliyuncs.com/jetson/${JETSON_INIT_VERSION}/deployments/xxx.sh | sh -
+#     curl -sfL https://suanpan-public.oss-cn-shanghai.aliyuncs.com/jetson/${VERSION}/deployments/xxx.sh | sh -
 # }
 
 {
