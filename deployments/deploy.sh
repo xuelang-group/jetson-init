@@ -6,6 +6,10 @@ info() {
     echo '[INFO] ' "$@"
 }
 
+setup_verify_version() {
+    VERSION="${JETSON_INIT_VERSION}"
+}
+
 deploy_k3s() {
     export INSTALL_K3S_WITH_NVIDIA_RUNTIME=true
     curl -sfL https://suanpan-public.oss-cn-shanghai.aliyuncs.com/k3s/deploy.sh | sh -
@@ -20,7 +24,7 @@ wait_for_k3s() {
 }
 
 generate_suanpan_rocket_configs() {
-    ROCKET_CONFIG_URL="https://suanpan-public.oss-cn-shanghai.aliyuncs.com/jetson/${JETSON_INIT_VERSION}/deployments/suanpan-rocket/rocket.yaml"
+    ROCKET_CONFIG_URL="https://suanpan-public.oss-cn-shanghai.aliyuncs.com/jetson/${VERSION}/deployments/suanpan-rocket/rocket.yaml"
     ROCKET_CONFIG_PATH="/etc/suanpan-rocket/inner.conf.d/rocket.yaml"
     SERIAL_NUMBER=$(cat /proc/device-tree/serial-number)
     mkdir -p $(dirname ${ROCKET_CONFIG_PATH})
@@ -32,6 +36,7 @@ delploy_suanpan_rocket() {
 }
 
 {
+    setup_verify_version
     deploy_k3s
     wait_for_k3s
     generate_suanpan_rocket_configs
