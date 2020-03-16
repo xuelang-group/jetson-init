@@ -21,6 +21,7 @@ prepare() {
 
 init() {
     # add new jobs here, notice running order
+    export JETSON_INIT_VERSION=${VERSION}
     curl -sfL https://suanpan-public.oss-cn-shanghai.aliyuncs.com/jetson/${VERSION}/deployments/clean.sh | sh -
     curl -sfL https://suanpan-public.oss-cn-shanghai.aliyuncs.com/jetson/${VERSION}/deployments/deploy.sh | sh -
 }

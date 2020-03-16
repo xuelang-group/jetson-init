@@ -1,0 +1,4 @@
+rocket:
+  id: "{{ SERIAL_NUMBER }}"
+  brand: "Jetson Nano"
+  arch: "arm64v8"
