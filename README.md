@@ -1,7 +1,7 @@
 # jetson-init
 Jetson Init Scripts as a single k3s server
 
-`version: 0.0.10`
+`version: 0.0.11`
 
 ## Usage
 
