@@ -8,6 +8,10 @@ Jetson Init Scripts as a single k3s server
 ``` bash
 curl -sfL https://suanpan-public.oss-cn-shanghai.aliyuncs.com/jetson/init.sh | sh -
 ```
+## mv docker to /mnt/ssd [only test]
+``` bash
+curl -sfL https://suanpan-public.oss-cn-shanghai.aliyuncs.com/jetson/0.0.11/deployments/mv_docker_mnt.sh | sh -
+```
 
 ## develop
 1. switch branch "develop"
