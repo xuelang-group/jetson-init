@@ -6,6 +6,15 @@ set +e
 # 2. remove desktop related files and packages 
 
 # borrow from https://devtalk.nvidia.com/default/topic/1049161/jetson-nano/can-i-install-ubuntu-server-in-jetson-nano-/
+
+set_boot_to_no_desktop() {
+systemctl stop apt-daily.timer
+systemctl disable apt-daily.timer
+systemctl mask apt-daily.service
+systemctl daemon-reload
+}
+
+ins
 set_boot_to_no_desktop() {
     systemctl isolate multi-user.target
 }
