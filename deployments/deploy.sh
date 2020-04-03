@@ -10,6 +10,11 @@ setup_verify_version() {
     VERSION="${JETSON_INIT_VERSION}"
 }
 
+install_nvidia_container_runtime(){
+    apt-get update
+    apt-get install -y nvidia-container-runtime
+}
+
 deploy_k3s() {
     export INSTALL_K3S_WITH_NVIDIA_RUNTIME=true
     curl -sfL https://suanpan-public.oss-cn-shanghai.aliyuncs.com/k3s/deploy.sh | sh -
@@ -37,6 +42,7 @@ delploy_suanpan_rocket() {
 
 {
     setup_verify_version
+    install_nvidia_container_runtime
     deploy_k3s
     wait_for_k3s
     generate_suanpan_rocket_configs
