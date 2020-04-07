@@ -29,11 +29,14 @@ wait_for_k3s() {
 }
 
 generate_suanpan_rocket_configs() {
-    ROCKET_CONFIG_URL="https://suanpan-public.oss-cn-shanghai.aliyuncs.com/jetson/${VERSION}/deployments/suanpan-rocket/rocket.yaml"
-    ROCKET_CONFIG_PATH="/etc/suanpan-rocket/inner.conf.d/rocket.yaml"
+    INNER_CONFIGS_PATH="/etc/suanpan-rocket/inner.conf.d"
+    EXTRA_CONFIGS_PATH="/etc/suanpan-rocket/extra.conf.d"
+    mkdir -p ${INNER_CONFIGS_PATH} ${EXTRA_CONFIGS_PATH}
+
+    ROCKET_CONFIGS_URL="https://suanpan-public.oss-cn-shanghai.aliyuncs.com/jetson/${VERSION}/deployments/suanpan-rocket/rocket.yaml"
+    ROCKET_CONFIGS_PATH="${INNER_CONFIGS_PATH}/rocket.yaml"
     SERIAL_NUMBER=$(cat /proc/device-tree/serial-number)
-    mkdir -p $(dirname ${ROCKET_CONFIG_PATH})
-    curl -sfL ${ROCKET_CONFIG_URL} | sed "s/{{ SERIAL_NUMBER }}/${SERIAL_NUMBER}/g" > ${ROCKET_CONFIG_PATH}
+    curl -sfL ${ROCKET_CONFIGS_URL} | sed "s/{{ SERIAL_NUMBER }}/${SERIAL_NUMBER}/g" > ${ROCKET_CONFIGS_PATH}
 }
 
 delploy_suanpan_rocket() {
