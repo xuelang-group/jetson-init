@@ -9,6 +9,13 @@ Jetson Init Scripts as a single k3s server
 curl -sfL https://suanpan-public.oss-cn-shanghai.aliyuncs.com/jetson/init.sh | sh -
 ```
 ## mv docker to /mnt/ssd [only test]
+build ssd ext mnt (/mnt/ssd) with 
+``` bash
+curl -sfL https://suanpan-public.oss-cn-shanghai.aliyuncs.com/jetson/0.0.14/deployments/build_mnt.sh | sh -
+```
+[or do it yourself]
+
+mv docker to /mnt/ssd
 ``` bash
 curl -sfL https://suanpan-public.oss-cn-shanghai.aliyuncs.com/jetson/0.0.14/deployments/mv_docker_mnt.sh | sh -
 ```
