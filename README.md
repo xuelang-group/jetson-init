@@ -1,7 +1,7 @@
 # jetson-init
 Jetson Init Scripts as a single k3s server
 
-`version: 0.0.14`
+`version: 0.0.15`
 
 ## Usage
 
@@ -11,13 +11,13 @@ curl -sfL https://suanpan-public.oss-cn-shanghai.aliyuncs.com/jetson/init.sh | s
 ## mv docker to /mnt/ssd [only test]
 build ssd ext mnt (/mnt/ssd) with 
 ``` bash
-curl -sfL https://suanpan-public.oss-cn-shanghai.aliyuncs.com/jetson/0.0.14/deployments/build_mnt.sh | sh -
+curl -sfL https://suanpan-public.oss-cn-shanghai.aliyuncs.com/jetson/0.0.15/deployments/build_mnt.sh | sh -
 ```
 [or do it yourself]
 
 mv docker to /mnt/ssd
 ``` bash
-curl -sfL https://suanpan-public.oss-cn-shanghai.aliyuncs.com/jetson/0.0.14/deployments/mv_docker_mnt.sh | sh -
+curl -sfL https://suanpan-public.oss-cn-shanghai.aliyuncs.com/jetson/0.0.15/deployments/mv_docker_mnt.sh | sh -
 ```
 
 ## develop
