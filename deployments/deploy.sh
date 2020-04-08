@@ -15,6 +15,11 @@ install_nvidia_container_runtime(){
     apt-get install -y nvidia-container-runtime
 }
 
+add_docker_daemon_json(){
+    DOCKER_DAEMON_URL="https://suanpan-public.oss-cn-shanghai.aliyuncs.com/jetson/${VERSION}/deployments/docker/daemon.json"
+    DOCKER_DAEMON_PATH="/etc/docker/daemon.json"
+    url -sfL ${DOCKER_DAEMON_URL}  > ${DOCKER_DAEMON_PATH}
+}
 deploy_k3s() {
     export INSTALL_K3S_WITH_NVIDIA_RUNTIME=true
     curl -sfL https://suanpan-public.oss-cn-shanghai.aliyuncs.com/k3s/deploy.sh | sh -
@@ -46,6 +51,7 @@ delploy_suanpan_rocket() {
 {
     setup_verify_version
     install_nvidia_container_runtime
+    add_docker_daemon_json
     deploy_k3s
     wait_for_k3s
     generate_suanpan_rocket_configs
