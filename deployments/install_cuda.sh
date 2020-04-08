@@ -1,4 +1,5 @@
 set -x
+echo install_cuda, you need great network
 #cuda
 apt-get install -y cuda-command-line-tools-10-0 
 apt-get install -y cuda-compiler-10-0 
