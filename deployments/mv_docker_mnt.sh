@@ -3,10 +3,11 @@
 #stop docker
 systemctl stop docker
 systemctl stop docker.socket
-time cp -r /var/lib/docker /mnt/ssd/docker
+mkdir  -p /mnt/ssd/docker
+time cp -r /var/lib/docker/* /mnt/ssd/docker/
 # backup files
-time cp /mnt/ssd/docker /mnt/ssd/docker.back$(date +%m_%d)
-time rm /var/lib/docker
+time cp /var/lib/docker /mnt/ssd/docker.back$(date +%m_%d)
+time rm -rf /var/lib/docker
 # link docker files
 ln -s /mnt/ssd/docker /var/lib/docker
 systemctl start docker
