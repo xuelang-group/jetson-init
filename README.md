@@ -1,7 +1,7 @@
 # jetson-init
 Jetson Init Scripts as a single k3s server
 
-`version: 0.0.19`
+`version: 0.0.20`
 
 ## Usage
 
@@ -11,19 +11,19 @@ curl -sfL https://suanpan-public.oss-cn-shanghai.aliyuncs.com/jetson/init.sh | s
 
 ## install cuda
 ``` bash
-curl -sfL https://suanpan-public.oss-cn-shanghai.aliyuncs.com/jetson/0.0.19/deployments/install_cuda.sh | sh -
+curl -sfL https://suanpan-public.oss-cn-shanghai.aliyuncs.com/jetson/0.0.20/deployments/install_cuda.sh | sh -
 ```
 
 ## mv docker to /mnt/ssd [only test]
 build ssd ext mnt (/mnt/ssd) with 
 ``` bash
-curl -sfL https://suanpan-public.oss-cn-shanghai.aliyuncs.com/jetson/0.0.19/deployments/build_mnt.sh | sh -
+curl -sfL https://suanpan-public.oss-cn-shanghai.aliyuncs.com/jetson/0.0.20/deployments/build_mnt.sh | sh -
 ```
 [or do it yourself]
 
 mv docker to /mnt/ssd
 ``` bash
-curl -sfL https://suanpan-public.oss-cn-shanghai.aliyuncs.com/jetson/0.0.19/deployments/mv_docker_mnt.sh | sh -
+curl -sfL https://suanpan-public.oss-cn-shanghai.aliyuncs.com/jetson/0.0.20/deployments/mv_docker_mnt.sh | sh -
 ```
 
 ## develop
