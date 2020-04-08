@@ -5,8 +5,8 @@ apt-get install -y cuda-command-line-tools-10-0
 apt-get install -y cuda-compiler-10-0 
 apt-get install -y cuda-cublas-10-0 
 apt-get install -y cuda-cublas-dev-10-0
-apt-get install -y cuda-apt-get install -y cudart-10-0
-apt-get install -y cuda-apt-get install -y cudart-dev-10-0
+apt-get install -y cudart-10-0
+apt-get install -y cudart-dev-10-0
 apt-get install -y cuda-cufft-10-0
 apt-get install -y cuda-cufft-dev-10-0
 apt-get install -y cuda-cuobjdump-10-0
