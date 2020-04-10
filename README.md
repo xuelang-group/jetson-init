@@ -14,6 +14,10 @@ curl -sfL https://suanpan-public.oss-cn-shanghai.aliyuncs.com/jetson/init.sh | s
 curl -sfL https://suanpan-public.oss-cn-shanghai.aliyuncs.com/jetson/0.0.23/deployments/install_cuda.sh | sh -
 ```
 
+## cleanup
+``` bash
+curl -sfL https://suanpan-public.oss-cn-shanghai.aliyuncs.com/jetson/0.0.23/deployments/clean.sh | sh -
+```
 ## mv docker to /mnt/ssd [only test]
 build ssd ext mnt (/mnt/ssd) with 
 ``` bash
