@@ -29,6 +29,13 @@ uninstall_desktop_packages() {
     apt purge ubuntu-desktop -y && sudo apt autoremove -y && sudo apt autoclean
     apt-get autoremove -y
 }
+remove_preinstall_software() {
+    apt-get purge -y gnome-mahjongg 
+    apt-get purge -y gnome-sudoku
+    apt-get purge -y gnome-mines
+    apt-get purge -y rhythmbox
+    apt-get purge -y gnome-keyring
+}
 remove_files() {
     chown root:root / /lib
 
@@ -53,6 +60,7 @@ remove_files() {
 if [ `whoami` = "root" ];then
   set_boot_to_no_desktop
   uninstall_desktop_packages
+  remove_preinstall_software
   remove_files
 else
   echo "error: no root user"
