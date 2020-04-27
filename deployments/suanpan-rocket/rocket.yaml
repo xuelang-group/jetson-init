@@ -1,4 +1,5 @@
 rocket:
   id: "{{ SERIAL_NUMBER }}"
+  name: "{{ NAME }}"
   brand: "Jetson Nano"
   arch: "arm64v8"

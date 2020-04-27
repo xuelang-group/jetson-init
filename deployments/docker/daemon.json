@@ -8,5 +8,10 @@
   "registry-mirrors": [
     "https://0bvoxckm.mirror.aliyuncs.com"
   ],
-  "default-runtime": "nvidia"
+  "default-runtime": "nvidia",
+  "log-driver": "json-file",
+  "log-opts": {
+    "max-size": "10m",
+    "max-file": "3"
+  }
 }
