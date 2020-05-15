@@ -42,7 +42,7 @@ generate_suanpan_rocket_configs() {
     ROCKET_CONFIGS_PATH="${INNER_CONFIGS_PATH}/rocket.yaml"
     SERIAL_NUMBER=$(cat /proc/device-tree/serial-number)
     HOSTNAME=$(hostname)
-    curl -sfL ${ROCKET_CONFIGS_URL} | sed "s/{{ SERIAL_NUMBER }}/${SERIAL_NUMBER}/g" > sed "s/{{ NAME }}/${HOSTNAME}/g" > ${ROCKET_CONFIGS_PATH}
+    curl -sfL ${ROCKET_CONFIGS_URL} | sed "s/{{ SERIAL_NUMBER }}/${SERIAL_NUMBER}/g" | sed "s/{{ NAME }}/${HOSTNAME}/g" > ${ROCKET_CONFIGS_PATH}
 }
 
 delploy_suanpan_rocket() {
